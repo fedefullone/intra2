@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cuadros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Consultas</h1>
+    <form id="dataForm">
+        <label for="pedido">N.Pedido:</label>
+        <input type="text" id="pedido" required>
+
+        <label for="zona">Zona:</label>
+        <input type="text" id="zona" required>
+
+        <label for="seller">Seller:</label>
+        <input type="text" id="seller" required>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" required>
+
+        <label for="obs">Consulta:</label>
+        <input type="text" id="obs" required>
+
+        <button type="button" onclick="addData()">Agregar Datos</button>
+    </form>
+
+    <div id="resultTable">
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>N.Pedido</th>
+                    <th>Zona</th>
+                    <th>Seller</th>
+                    <th>Estado</th>
+                    <th>Consulta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se agregarán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
