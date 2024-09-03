@@ -18,6 +18,14 @@ h1 {
     text-align: center;
 }
 
+/* Contenedor para el formulario y la tabla */
+.container {
+    display: flex;
+    gap: 20px; /* Espacio entre el formulario y la tabla */
+    align-items: flex-start; /* Alinea ambos elementos al inicio */
+    margin-top: 20px;
+}
+
 /* Estilos del formulario */
 form {
     display: flex;
@@ -46,7 +54,7 @@ input {
     color: #333;
 }
 
-/* Botón */
+/* Botón general */
 button {
     padding: 10px;
     background-color: #4CAF50;
@@ -56,6 +64,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -64,16 +73,14 @@ button:hover {
 
 /* Estilos de la tabla */
 #resultTable {
-    margin-top: 20px;
     width: 100%;
-    max-width: 600px; /* Limita el ancho máximo de la tabla */
-    margin: 0 auto; /* Centra la tabla */
+    max-width: 600px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -97,3 +104,29 @@ td {
 tr:hover {
     background-color: #f9f9f9;
 }
+
+/* Estilo específico para el botón de copiar */
+button[onclick="copyTable()"] {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[onclick="copyTable()"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el logotipo */
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* Centrar la imagen y agregar espacio debajo */
+    max-width: 100px; /* Ajustar el tamaño según sea necesario */
+    height: auto;
+}
+

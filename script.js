@@ -17,18 +17,33 @@ function addData() {
     const newRow = table.insertRow();
 
     // Agrega celdas y los datos ingresados
-    const cell1 = newRow.insertCell(0);
-    const cell2 = newRow.insertCell(1);
-    const cell3 = newRow.insertCell(2);
-    const cell4 = newRow.insertCell(3);
-    const cell5 = newRow.insertCell(4);
-
-    cell1.textContent = pedido;
-    cell2.textContent = zona;
-    cell3.textContent = seller;
-    cell4.textContent = estado;
-    cell5.textContent = obs;
+    newRow.insertCell(0).textContent = pedido;
+    newRow.insertCell(1).textContent = zona;
+    newRow.insertCell(2).textContent = seller;
+    newRow.insertCell(3).textContent = estado;
+    newRow.insertCell(4).textContent = obs;
 
     // Limpia los campos después de agregar los datos
     document.getElementById('dataForm').reset();
+}
+
+function copyTable() {
+    // Selecciona la tabla
+    const table = document.getElementById('dataTable');
+    // Crea un rango y selección del contenido de la tabla
+    const range = document.createRange();
+    range.selectNode(table);
+    window.getSelection().removeAllRanges(); // Limpia cualquier selección previa
+    window.getSelection().addRange(range);
+
+    // Copia la selección al portapapeles
+    try {
+        const successful = document.execCommand('copy');
+        alert(successful ? 'Cuadro copiado al portapapeles' : 'Error al copiar');
+    } catch (err) {
+        console.error('Error al copiar: ', err);
+    }
+
+    // Limpia la selección
+    window.getSelection().removeAllRanges();
 }
